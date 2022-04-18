@@ -30,7 +30,7 @@ class PostsController < ApplicationController
           render turbo_stream:[
             turbo_stream.update('new_post', partial: "posts/form", locals: {post: Post.new}),
             turbo_stream.prepend('posts', partial: "posts/post", locals: {post: @post}),
-            turbo_stream.update('flash', partial: "layouts/flash")
+            turbo_stream.prepend('flash', partial: "layouts/flash")
           ]
       end
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }

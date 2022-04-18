@@ -16,7 +16,7 @@
     <%= Time.zone.now %>
   </header>
     <main>
-    <div id="flash">
+    <div id="flash" style="position:absolute; z-index: 2; right: 10px">
       <%= render partial: "layouts/flash" %>
     </div>
       <%= yield %>
